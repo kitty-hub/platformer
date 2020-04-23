@@ -57,7 +57,9 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 `
 }
-let You = sprites.create(img`
+let You: Sprite = null
+You.setPosition(9, 9)
+You = sprites.create(img`
 . . . . . . . . . . b 5 b . . . 
 . . . . . . . . . b 5 b . . . . 
 . . . . . . b b b b b b . . . . 
@@ -75,7 +77,6 @@ b b c c c d d d 5 5 5 5 5 d b .
 . . . . c c d d d 5 5 5 b b . . 
 . . . . . . c c c c c b b . . . 
 `, SpriteKind.Player)
-You.setPosition(9, 9)
 tiles.setTilemap(tiles.createTilemap(
             hex`1000100002020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020703030303030303030303030303030303020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020204020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202`,
             img`
@@ -100,16 +101,12 @@ tiles.setTilemap(tiles.createTilemap(
             TileScale.Sixteen
         ))
 scene.cameraFollowSprite(You)
-You.setVelocity(100, 300)
+controller.moveSprite(You)
+You.vy = 300
 forever(function () {
     if (controller.up.isPressed() && You.isHittingTile(CollisionDirection.Top)) {
         You.vy = -100
         pause(400)
-        You.vy = -100
-    }
-})
-forever(function () {
-    if (controller.right.isPressed() && You.isHittingTile(CollisionDirection.Top)) {
-        You.vx = 100
+        You.vy = 0
     }
 })
