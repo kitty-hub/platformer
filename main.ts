@@ -56,10 +56,28 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `
+    //% blockIdentity=images._tile
+    export const tile3 = img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 3 3 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 7 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 7 7 7 7 
+7 7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 
+7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 7 
+7 7 7 7 7 7 7 3 3 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`
 }
-let You: Sprite = null
-You.setPosition(9, 9)
-You = sprites.create(img`
+let Level = 1
+let You = sprites.create(img`
 . . . . . . . . . . b 5 b . . . 
 . . . . . . . . . b 5 b . . . . 
 . . . . . . b b b b b b . . . . 
@@ -77,8 +95,21 @@ b b c c c d d d 5 5 5 5 5 d b .
 . . . . c c d d d 5 5 5 b b . . 
 . . . . . . c c c c c b b . . . 
 `, SpriteKind.Player)
-tiles.setTilemap(tiles.createTilemap(
-            hex`1000100002020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020703030303030303030303030303030303020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020204020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202`,
+You.setPosition(9, 9)
+You.vy = 300
+scene.cameraFollowSprite(You)
+controller.moveSprite(You)
+forever(function () {
+    if (controller.up.isPressed() && You.isHittingTile(CollisionDirection.Top)) {
+        You.y = 100
+        pause(500)
+        You.y = -100
+    }
+})
+forever(function () {
+    if (Level == "1") {
+        tiles.setTilemap(tiles.createTilemap(
+            hex`1000100003030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030607070707070707070707070707070707030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
             img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -93,20 +124,12 @@ tiles.setTilemap(tiles.createTilemap(
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,sprites.castle.tilePath4,sprites.castle.tilePath5,sprites.castle.tilePath2,sprites.dungeon.collectibleBlueCrystal,myTiles.tile1,myTiles.tile2,sprites.dungeon.buttonPink],
+            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.castle.tilePath5,sprites.castle.tilePath2,sprites.dungeon.buttonPink,sprites.builtin.forestTiles0,myTiles.tile3],
             TileScale.Sixteen
         ))
-scene.cameraFollowSprite(You)
-controller.moveSprite(You)
-You.vy = 300
-forever(function () {
-    if (controller.up.isPressed() && You.isHittingTile(CollisionDirection.Top)) {
-        You.vy = -100
-        pause(400)
-        You.vy = 0
     }
 })
