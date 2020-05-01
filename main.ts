@@ -75,9 +75,154 @@ namespace myTiles {
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
 `
+    //% blockIdentity=images._tile
+    export const tile4 = img`
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
+`
 }
-let Level = 1
-let You = sprites.create(img`
+function level3 () {
+	
+}
+function level1 () {
+    scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . 3 
+2 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
+    scene.setTile(2, img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 3 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 3 3 3 7 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 3 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 3 3 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 3 3 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 3 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 7 7 7 7 7 7 7 7 7 3 3 7 7 7 7 
+7 7 7 7 7 7 7 7 7 3 3 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 3 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`, true)
+    scene.setTile(3, img`
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e f f e e 
+e e e e e e e e e e e e f f e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+`, true)
+    scene.setTile(4, img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 7 7 3 3 3 3 3 3 3 3 3 7 7 7 7 
+7 7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 
+7 7 7 7 7 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 7 7 7 3 3 3 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 3 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`, true)
+}
+scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
+    level2()
+})
+function level2 () {
+    You.setPosition(9, 9)
+    You.vy = 600
+    scene.setTileMap(img`
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . 9 2 2 4 . . . 
+. . . 9 . . 4 . . f 
+2 2 2 2 . . 2 2 2 2 
+. . . . . . . . . . 
+. . . . . . . . . . 
+. . . . . . . . . . 
+`)
+    scene.setTile(9, img`
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 3 3 3 7 7 7 7 7 7 7 7 
+7 7 7 7 3 3 3 3 3 7 7 7 7 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 3 3 3 3 3 3 3 3 3 7 7 7 7 7 
+7 3 3 3 3 3 3 3 3 3 3 3 7 7 7 7 
+3 3 3 3 3 3 3 3 3 3 3 3 3 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 3 3 3 3 3 3 3 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 7 
+`, true)
+    scene.setTile(15, img`
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e f f e e 
+e e e e e e e e e e e e f f e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+e e e e e e e e e e e e e e e e 
+`, true)
+}
+scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
+    level3()
+})
+let You: Sprite = null
+level1()
+You = sprites.create(img`
 . . . . . . . . . . b 5 b . . . 
 . . . . . . . . . b 5 b . . . . 
 . . . . . . b b b b b b . . . . 
@@ -95,41 +240,14 @@ b b c c c d d d 5 5 5 5 5 d b .
 . . . . c c d d d 5 5 5 b b . . 
 . . . . . . c c c c c b b . . . 
 `, SpriteKind.Player)
-You.setPosition(9, 9)
-You.vy = 300
+You.setPosition(9, 12)
+You.vy = 600
 scene.cameraFollowSprite(You)
 controller.moveSprite(You)
 forever(function () {
-    if (controller.up.isPressed() && You.isHittingTile(CollisionDirection.Top)) {
-        You.y = 100
-        pause(500)
-        You.y = -100
-    }
-})
-forever(function () {
-    if (Level == "1") {
-        tiles.setTilemap(tiles.createTilemap(
-            hex`1000100003030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030607070707070707070707070707070707030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303030303`,
-            img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . 2 
-2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`,
-            [myTiles.tile0,myTiles.tile1,myTiles.tile2,sprites.castle.tilePath5,sprites.castle.tilePath2,sprites.dungeon.buttonPink,sprites.builtin.forestTiles0,myTiles.tile3],
-            TileScale.Sixteen
-        ))
+    if (controller.A.isPressed() && You.isHittingTile(CollisionDirection.Bottom)) {
+        You.vy = -100
+        pause(400)
+        You.vy = 300
     }
 })
