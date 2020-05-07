@@ -95,9 +95,6 @@ namespace myTiles {
 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 3 
 `
 }
-function level3 () {
-	
-}
 function level1 () {
     scene.setTileMap(img`
 . . . . . . . . . . 
@@ -167,6 +164,27 @@ e e e e e e e e e e e e e e e e
 scene.onHitTile(SpriteKind.Player, 3, function (sprite) {
     level2()
 })
+function level3 () {
+    scene.setTileMap(img`
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 3 3 3 3 3 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 3 a a a 3 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 3 a a a 3 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 3 3 3 3 3 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . 9 9 9 9 9 9 9 . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+`)
+    You.say("You Won!!")
+}
 function level2 () {
     You.setPosition(9, 9)
     You.vy = 600
@@ -220,6 +238,11 @@ e e e e e e e e e e e e e e e e
 scene.onHitTile(SpriteKind.Player, 15, function (sprite) {
     level3()
 })
+controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (You.isHittingTile(CollisionDirection.Bottom)) {
+        You.vy = -250
+    }
+})
 let You: Sprite = null
 level1()
 You = sprites.create(img`
@@ -241,7 +264,7 @@ b b c c c d d d 5 5 5 5 5 d b .
 . . . . . . c c c c c b b . . . 
 `, SpriteKind.Player)
 You.setPosition(9, 12)
-You.vy = 600
+You.ay = 500
 scene.cameraFollowSprite(You)
 controller.moveSprite(You)
 forever(function () {
